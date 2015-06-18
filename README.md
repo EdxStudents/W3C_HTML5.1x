@@ -1,4 +1,4 @@
-# Welcome to W3C HTML5 Archives
+﻿# Welcome to W3C HTML5 Archives
 HTML5 is the standard language of the Web, developed by the World Wide Web Consortium, also known as W3C. HTML5 is and will continue to be THE essential technology for organizations delivering applications across multiple platforms.
 
 As such, HTML5 is now supported on mobile phones, connected objects, game consoles, automobile dashboards, and devices that haven’t even been considered yet. Write once and deploy anywhere!
@@ -9,7 +9,7 @@ In this course, you will learn all the new features that were introduced with HT
 The material provided in this repository are copies of the edX W3C: HTML5.1x Learn HTML5 from W3C course material in PDF and mp4 formats.  You are free to download these files for offline copies but we ask that you do not share with others outside of the course. 
 
 ### Course Staff and Authors
-Professor Michel Buffa
+Professor Michel Buffa 
 Head of Training at W3C, Marie-Claire Forgue
 
 Contributors
