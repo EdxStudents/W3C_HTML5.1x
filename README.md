@@ -1,4 +1,4 @@
-# Welcome to W3C HTML5
+# Welcome to W3C HTML5 Archives
 HTML5 is the standard language of the Web, developed by the World Wide Web Consortium, also known as W3C. HTML5 is and will continue to be THE essential technology for organizations delivering applications across multiple platforms.
 
 As such, HTML5 is now supported on mobile phones, connected objects, game consoles, automobile dashboards, and devices that haven’t even been considered yet. Write once and deploy anywhere!
