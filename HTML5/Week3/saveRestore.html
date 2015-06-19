@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>saveRestore</title>
+
+	<style>
+	canvas {
+		border: 1px solid black;
+	}
+	</style>
+
+</head>
+<body>
+	<canvas id="myCanvas" width="400" height="400"></canvas>
+
+	<script>
+	 var canvas = document.querySelector("#myCanvas");
+	 var ctx = canvas.getContext('2d');
+
+	 drawMonster(150, 100, Math.PI/4, 'red');
+	 ctx.fillRect(0,0,50,50);
+	  
+	 for (j = 0; j < 10; j++) {
+
+	 	 drawMonster(j * 10, 100, Math.PI/(3/j), '#{0}', j*100000);
+	 }
+
+	 drawMonster(200, 100, Math.PI/3, 'blue');
+	 drawMonster(250, 100, Math.PI/2.5, 'green');
+	 drawMonster(300, 100, Math.PI/2, 'yellow');
+	 drawMonster(350, 100, Math.PI/1.90, 'orange');
+
+	 function drawMonster(x, y, angle, color) {
+	 	// GOOD PRACTICE, SAVE AND THEN RESTORE!!!!
+	 	ctx.save();
+	 	// change ctx properties!!!!
+	 	ctx.translate(x, y);
+	 	ctx.rotate(angle);
+	 	ctx.fillStyle = color;
+  	
+  	ctx.fillRect(0, 0, 200, 200);
+
+  	ctx.restore();
+	 }
+	</script>
+</body>
+</html>

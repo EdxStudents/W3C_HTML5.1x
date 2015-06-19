@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Some rectangles drawn in immediate mode</title>
+<style>
+#myCanvas {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="300">
+	Your browser does not support the canvas tag.
+</canvas>
+
+<script>
+	var canvas = document.getElementById('myCanvas');
+	var context = canvas.getContext('2d');
+	  context.font = "60pt Calibri";
+	  context.lineWidth = 3;
+	  context.strokeStyle = "blue";
+	  context.fillStyle = "red";
+	  context.fillText("Hello World!", 10, 100);
+	  context.strokeText("Hello World!", 10, 100);
+	  var textMetrics = context.measureText("Hello World!");
+	  var width = textMetrics.width;
+	  // Draw a text that displays the width of the previous drawn text
+	  context.font = "20pt Arial";
+	  context.fillText("Width of previous text: " + width + "pixels", 10, 150);
+	  // Draw the baseline of the given width
+	  context.moveTo(5, 100);
+	  context.lineTo(width+15, 100);
+	  context.stroke();
+
+</script>
+
+
+</body>
+</html>

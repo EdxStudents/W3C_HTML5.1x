@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Some rectangles drawn in immediate mode</title>
+<style>
+#myCanvas {
+	border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="300">
+	Your browser does not support the canvas tag.
+</canvas>
+
+<script>
+	var canvas = document.getElementById('myCanvas');
+	var ctx = canvas.getContext('2d');
+
+	ctx.font = "60pt Calibri";
+	ctx.lineWidth = 8;
+  ctx.strokeStyle = "black";
+	ctx.fillStyle = "red";
+	
+	ctx.strokeText("Hello World!", 14, 104);
+	ctx.fillText("Hello World!", 10, 100);
+
+	ctx.strokeText("Hello World!", 14, 179, 300);
+	ctx.fillText("Hello World!", 10, 175, 300);
+
+	ctx.strokeText("Hello World!", 13, 254, 150);
+	ctx.fillText("Hello World!", 10, 250, 150);
+</script>
+
+
+</body>
+</html>

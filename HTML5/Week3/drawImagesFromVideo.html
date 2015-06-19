@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+	var video;
+	var canvas, ctx;
+	var angle = 0;
+
+	function init() {
+		video = document.getElementById('sourcevid');
+		canvas = document.getElementById('myCanvas');
+		ctx = canvas.getContext('2d');
+
+		// call processFrame each 25ms
+		setInterval("processFrame()", 25);  
+	}
+
+	function processFrame() {
+		ctx.drawImage(video, 0, 0, 320, 180);
+
+		drawRotatingVideo(480, 90);
+
+		ctx.drawImage(video, 0, 180, 320, 180);
+		ctx.drawImage(video, 320, 180, 320, 180);
+	}
+
+	function drawRotatingVideo(x,y) {
+		// Clear the zone at the top right quarter of the canvas
+		ctx.clearRect(320, 0, 320, 180);
+
+		//We are going to change the coordinate system, save the context !
+		ctx.save();
+		// translate, rotate and recenter the image at its "real" center,
+		// not the top left corner
+		ctx.translate(x, y);
+		// rotate and increment the current angle
+		ctx.rotate(angle += 0.01); 
+		ctx.translate(-80, -45);
+
+		ctx.drawImage(video, 0, 0, 160, 90);
+
+		//restore the context
+		ctx.restore();
+	}
+</script>
+</head>
+<body onload="init()">
+<p>This is a < video > element: </p>
+<video id="sourcevid" controls loop="true" muted>
+<source src="http://www.craftymind.com/factory/html5video/BigBuckBunny_640x360.mp4" type="vide/mp4" />
+<source src="http://www.craftymind.com/factory/html5video/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+</video>
+<p>This is a < canvas > element: </p>
+<canvas id="myCanvas" width="620" height="360"></canvas>
+</body>
+</html>

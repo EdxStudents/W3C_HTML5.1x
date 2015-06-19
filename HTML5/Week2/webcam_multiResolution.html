@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getUserMedia constraints for choosing resolution</title>
+</head>
+<body onload="init();">
+  <h1>Set the camera resolution</h1>
+  Example adapted from: 
+   <a href="http://www.simpl.info/getusermedia/constraints/">
+     http://www.simpl.info/getusermedia/constraints/
+   </a>
+   <br>
+   <p>Click a button to call <code>getUserMedia()</code> with appropriate resolution.</p>
+
+	<div id="buttons">
+	  <button id="qvga">QVGA</button>
+	  <button id="vga">VGA</button>
+	  <button id="hd">HD</button>
+	</div>
+
+  <p id="dimensions"></p>
+
+  <video autoplay></video>
+  
+
+  <script>
+
+var vgaButton, qvgaButton, hdButton, dimensions, video, stream;
+
+function init() {
+   vgaButton = document.querySelector('button#vga');
+   qvgaButton = document.querySelector('button#qvga');
+   hdButton = document.querySelector('button#hd');
+   dimensions = document.querySelector('p#dimensions');
+   video = document.querySelector('video');
+  
+  navigator.getUserMedia = navigator.getUserMedia ||
+  navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+  
+  // Defines event listeners for the buttons that set the resolution
+  qvgaButton.onclick = function() {
+      getMedia(qvgaConstraints);
+  };
+  
+  vgaButton.onclick = function() {
+    getMedia(vgaConstraints);
+  };
+  
+  hdButton.onclick = function() {
+    getMedia(hdConstraints);
+  };
+
+  // Trick: check regularly the size of the video element and display it
+  // When getUserMedia is called the video element changes it sizes but for 
+  // a while its size is zero pixels... o we check every half a second
+    video.addEventListener('play', function() {
+       setTimeout(function() {
+           displayVideoDimensions();
+       }, 500);
+    });
+}
+
+
+// The different values for the constraints on resolution
+var qvgaConstraints = {
+  video: {
+    mandatory: {
+      maxWidth: 320,
+      maxHeight: 180
+    }
+  }
+};
+
+var vgaConstraints = {
+  video: {
+    mandatory: {
+      maxWidth: 640,
+      maxHeight: 360
+    }
+  }
+};
+
+var hdConstraints = {
+  video: {
+    mandatory: {
+      minWidth: 1280,
+      minHeight: 720
+    }
+  }
+};
+
+// The function that is called when a button has been clicked: starts the video
+// with the preferred resolution
+function getMedia(constraints) {
+  if (!!stream) {
+    video.src = null;
+    stream.stop();
+  }
+  navigator.getUserMedia(constraints, successCallback, errorCallback);
+}
+
+// callback if the capture is a sucess or an error
+function successCallback(stream) {
+  window.stream = stream; // To be able to switch resolution without crash
+  video.src = window.URL.createObjectURL(stream);
+}
+
+function errorCallback(error) {
+  console.log('navigator.getUserMedia error: ', error);
+}
+
+// util function that is called by the setInterval(...) every 0.5s, for
+// displaying the video dimensions
+function displayVideoDimensions() {
+  dimensions.innerHTML = 'Actual video dimensions: ' + video.videoWidth +
+    'x' + video.videoHeight + 'px.';
+}
+
+
+  </script>
+  </body>
+</html>

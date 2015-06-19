@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- 	<style>
+		#myCanvas {
+			border: 1px solid black;
+		}
+	</style> -->
+
+<script>
+
+	// Create canvas
+	var canvas, ctx;
+
+	function init() {
+		canvas = document.getElementById('myCanvas');
+		ctx = canvas.getContext('2d');
+		// move monster
+		ctx.translate(100, 100);
+		// rotate monster
+		ctx.rotate(Math.PI/4);
+		// scale/resize monster
+		ctx.scale(0.5, 0.5);
+		// draw monster
+		drawMonster(0, 0);
+	}
+
+	function drawMonster(x, y) {
+   // head
+   ctx.fillStyle='lightgreen';
+   ctx.fillRect(0,0,200,200);
+   // eyes
+   ctx.fillStyle='red';
+   ctx.fillRect(35,30,20,20);
+   ctx.fillRect(140,30,20,20);
+   // white of eye
+   ctx.fillStyle='white';
+   ctx.fillRect(41,36,13,13);
+   ctx.fillRect(141,36,14,13);
+   // interior of eye
+   ctx.fillStyle='blue';
+   ctx.fillRect(43,37,10,10);
+   ctx.fillRect(143,37,10,10);
+   // Nose
+   ctx.fillStyle='black';
+   ctx.fillRect(90,70,20,80);
+   // Mouth
+   ctx.fillStyle='purple';
+   ctx.fillRect(60,165,80,20);
+   // coordinate system at (0, 0)
+   drawArrow(ctx, 0, 0, 100, 0, 10, 'red');
+   drawArrow(ctx, 0, 0, 0, 100, 10, 'red');
+	}
+
+</script>
+</head>
+<body onload="init();">
+	<canvas id="myCanvas" width="400" height="400">
+    Fallback content that will be displayed in case the.
+	</canvas>
+
+
+
+<!-- JS for drawing the arrows -->
+<script>
+// Borrowed and adapted from : http://stackoverflow.com/questions/808826/draw-arrow-on-canvas-tag
+function drawArrow(ctx, fromx, fromy, tox, toy, arrowWidth, color){
+  //variables to be used when creating the arrow
+  var headlen = 10;
+  var angle = Math.atan2(toy-fromy,tox-fromx);
+
+  ctx.save();
+  ctx.strokeStyle = color;
+
+  //starting path of the arrow from the start square to the end square and drawing the stroke
+  ctx.beginPath();
+  ctx.moveTo(fromx, fromy);
+  ctx.lineTo(tox, toy);
+  ctx.lineWidth = arrowWidth;
+  ctx.stroke();
+
+  //starting a new path from the head of the arrow to one of the sides of the point
+  ctx.beginPath();
+  ctx.moveTo(tox, toy);
+  ctx.lineTo(tox-headlen*Math.cos(angle-Math.PI/7),toy-headlen*Math.sin(angle-Math.PI/7));
+
+  //path from the side point of the arrow, to the other side point
+  ctx.lineTo(tox-headlen*Math.cos(angle+Math.PI/7),toy-headlen*Math.sin(angle+Math.PI/7));
+
+  //path from the side point back to the tip of the arrow, and then again to the opposite side point
+  ctx.lineTo(tox, toy);
+  ctx.lineTo(tox-headlen*Math.cos(angle-Math.PI/7),toy-headlen*Math.sin(angle-Math.PI/7));
+
+  //draws the paths created above
+  ctx.stroke();
+  ctx.restore();
+}
+
+</script>
+</body>
+</html>

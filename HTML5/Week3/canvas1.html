@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta lang="en">
+  <meta charset="utf-8">
+  <title>Canvas 1</title>
+
+<script>
+	var canvas, ctx, canvas, ctx2;
+
+	window.onload = init;
+
+	function init() {
+	  canvas = document.querySelector("#myCanvas");
+	  ctx = canvas.getContext('2d');
+	  ctx.fillStyle='red';
+	  ctx.fillRect(10, 10, 100, 100);
+	  ctx.fillStyle='blue';
+	  ctx.fillRect(120, 10, 50, 45);  
+
+	  canvas2 = document.querySelector("#myCanvas2");
+	  ctx2 = canvas2.getContext('2d');
+	  ctx2.fillStyle='bu';
+	  ctx2.fillRect(200, 10, 80, 100)
+}
+
+
+</script>
+
+<style>
+
+#myCanvas2 {
+	border: 3px solid black;
+}
+
+</style>
+
+</head>
+<body>
+  <canvas id="myCanvas" width=200 height=200>
+      Canvas is not supported by your browser...
+  </canvas>
+
+<br/><br/>
+
+
+    <canvas id="myCanvas2" width="300" height="225">
+        Fallback content that will be displayed in case the web browser
+        does not support the canvas tag or in case scripting
+        is disabled.
+    </canvas>
+
+
+</body>
+</html>

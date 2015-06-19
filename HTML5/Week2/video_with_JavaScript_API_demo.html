@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Sequential Movies</title>
+
+</head>
+<body onload="init()">
+	<div>
+    	 <video id="myVideo" controls></video>
+		<div>
+			<p>Example of custom controls:</p>
+			<button onclick="playVideo();" style="cursor: pointer;">Play button</button>
+			<button onclick="pauseVideo();" style="cursor: pointer;">Pause</button>
+			<button onclick="rewindVideo();" style="cursor: pointer;">Back to beginning</button>
+		</div>
+	</div>
+
+
+	<script>
+   var myVideo;
+   var currentVideo = 0;
+   var sources = [
+         "http://html5doctor.com/demos/video-canvas-magic/video.mp4",
+		 "http://www.archive.org/download/AnimatedMechanicalArtPiecesAtMit/P1120973_512kb.mp4",
+		 "http://media.w3.org/2010/05/bunny/trailer.mp4", 
+		 "http://media.w3.org/2010/05/bunny/movie.mp4",
+		 "http://media.w3.org/2010/05/sintel/trailer.mp4"
+   ];
+   // Set the src of the video to the next URL in the playlist
+   // If at the end we start again from beginning (the modulo
+   // source.length does that)
+   function loadNextVideo() {
+      myVideo.src = sources[currentVideo % sources.length]
+      myVideo.load();
+      currentVideo++;
+   }
+   // callback that loads and play the next video
+  function loadAndplayNextVideo() {
+      console.log("playing " + sources[currentVideo])
+      loadNextVideo();
+      myVideo.play();
+  }
+  // Called when the page is loaded
+  function init(){
+      // get the video element using the DOM api
+      myVideo = document.querySelector("#myVideo");
+      // Define a callback function called each time a video ended
+      myVideo.addEventListener('ended', loadAndplayNextVideo, false);
+      // Load the first video when the page is loaded.
+      loadNextVideo();
+  }
+
+  function playVideo() {
+  	myVideo.play();
+  }
+  function pauseVideo() {
+	myVideo.pause();
+  }
+  function rewindVideo() {
+	myVideo.currentTime = 0;
+  } 
+</script>
+
+</body>
+</html>

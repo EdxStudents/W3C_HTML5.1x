@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script>
+	window.onload = function() {
+		// Necessity to run this code only after the web page has been loaded.
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext('2d');
+
+		var imageObj = new Image();
+
+		// Callback function called by the ImageObj.src=...line,  located after this function
+		imageObj.onload = function() {
+			// Draw the image only when we have the guarantee that it hs been loaded
+			context.drawImage(imageObj, 0, 0, 300, 300);
+		};
+
+		// Calls the imageObj.onload function asynchronously
+		imageObj.src = "http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png";
+	};
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="512" height="512"></canvas>
+</body>
+</html>

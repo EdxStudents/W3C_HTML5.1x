@@ -1,0 +1,74 @@
+code {
+  background: #2db34a;
+  border-radius: 6px;
+  color: #fff;
+  display: block;
+  font: 14px/24px "Source Code Pro", Inconsolata, "Lucida Console", Terminal, "Courier New", Courier;
+  padding: 24px 15px;
+  text-align: center;
+}
+header,
+section,
+aside,
+footer {
+  margin: 0 1.5% 24px 1.5%;
+}
+section {
+  float: left;
+  width: 30%;
+}
+aside {
+  float: right;
+  width: 30%;
+}
+footer {
+  clear: both;
+  margin-bottom: 0;
+}
+
+details {
+	display:block;
+	width: 300px;
+	margin: 10px 0;
+}
+summary {
+	display: block;
+	color: white;
+	border-radius: 5px;
+	padding: 5px;
+	cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+   color:#FF0000; 
+   background:#FFFFFF; 
+}
+
+details[open] summary::-webkit-details-marker {
+   color:#0000FF; 
+   background:#00FFFF;
+}
+summary::-webkit-details-marker {
+   display: none
+}
+summary:after {
+   content: "$";
+   color: #FF00FF;
+   float: left;
+   font-size: 1.5em;
+   font-weight: bold;
+   margin: -5px 5px 0 0;
+   padding: 0;
+   text-align: center;
+   width: 20px;
+}
+
+details[open] summary:after {
+   content: "#";
+  color: #FFFFFF
+}
+
+mark {
+	background-color: blue;
+	color: white;
+}

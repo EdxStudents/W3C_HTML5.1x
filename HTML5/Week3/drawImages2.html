@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<script>
+	window.onload = function() {
+		// Necessity to run this code only after the web page has been loaded.
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext('2d');
+
+		var imageObj = new Image();
+ 
+imageObj.onload = function() {
+   // Try commenting/uncommenting the following lines to see the
+   // effect of the different drawImage variants
+   // Original, big image
+   // context.drawImage(imageObj, 0, 10);
+   // Original image drawn with size = 100x100 pixels
+   context.drawImage(imageObj, 0, 10, 100, 100);
+   // with size = 150x150
+   context.drawImage(imageObj, 80, 10, 150, 150);
+   // with size = 200x200
+   context.drawImage(imageObj, 210, 10, 200, 200);
+ 
+  // draw the sub image at 0, 0, width = 512, height = 100
+  // at position 100, 250, with a width of 256 and a height of 50
+  context.drawImage(imageObj, 0, 0, 512, 100, 100, 250, 256, 50);
+};
+imageObj.src = "http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png";
+};
+	</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="512" height="512"></canvas>
+</body>
+</html>

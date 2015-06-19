@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		#myCavas {
+			border: 1px solid black;
+		}
+	</style>
+
+<script>
+
+	var canvas, ctx;
+
+	function init() {
+		canvas = document.getElementById('myCanvas');
+		ctx = canvas.getContext('2d');
+		drawSomething();
+	}
+	function drawSomething() {
+		// Draw frame
+		ctx.fillStyle = '#BBBBBB';
+		ctx.fillRect(0, 0, 190, 190);
+		// set the global context value
+		ctx.lineWidth = 5;
+		ctx.fillStyle = 'red';
+		ctx.strokeStyle = 'blue';
+		// font for all text
+		ctx.font = 'italic bold 20pt Calibri';
+		// Draw the two filled red rectangles
+		ctx.fillRect(10, 30, 70, 150);
+		ctx.fillRect(110, 30, 70, 150);
+		// Draw the two blue wirefame rectangles
+		ctx.strokeRect(10, 30, 70, 150); 
+		ctx.strokeRect(110, 30, 70, 150);
+		// Draw a message above the rectangles
+		ctx.fillText("hello", 70, 22);
+	}
+</script>
+</head>
+<body onload="init();">
+	<canvas id="myCanvas" width="200" height="200">
+    Fallback content that will be displayed in case the.
+	</canvas>
+
+</body>
+</html>

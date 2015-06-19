@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Full width video like PayPal site</title>
+	</head>
+
+	<body onload="init();">
+
+	<video id="w3devCampusVideo" controls="controls" poster="lamb.jpg" preload="metadata"> <!--  autoplay -->
+	  <source src="http://html5doctor.com/demos/video-canvas-magic/video.mp4" type="video/mp4">
+	  <source src="http://html5doctor.com/demos/video-canvas-magic/video.ogg" type="video/ogg">
+	  Your browser does not support the video element.
+	</video>	
+
+ 
+
+
+	</body>
+</html>
+
+<style> 
+/*video {
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	margin: -180px 0 0 -240px;
+}*/
+
+body {
+	margin: 0;
+	padding: 0;
+	overflow:hidden;
+}
+
+/*#w3devCampusVideo {
+		width: 70%;
+		transition: all 0.5s ease-in-out;
+*/	}
+/*#w3devCampusVideo:hover {
+	width: 400px;
+	transform:rotate(-5deg);
+}*/
+</style>
+
+
+<script>
+var video;
+
+function init(){
+	//function called when the page is loaded
+
+	video = document.querySelector("#w3devCampusVideo");
+
+	//For initial value
+	video.width = window.innerWidth;
+	video.height = window.innerHeight;
+
+	//For dealing with windows resize
+	window.onresize = function() {
+		video.width = window.innerWidth;
+		video.height = window.innerHeight;
+	};
+}
+</script>
+
+
+

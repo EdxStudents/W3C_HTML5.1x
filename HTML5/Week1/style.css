@@ -1,0 +1,194 @@
+html {
+			font-size:100.01%;
+		}
+		/* reset */
+		html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,hr,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfont,thead,tr,th,td{padding:0;margin:0;border:none;outline:none;vertical-align:baseline;font-family:inherit;font-size:100%;}dfn,i,cite,var,address,em{font-style:normal;}th,b,strong,h1,h2,h3,h4,h5,h6{font-weight:normal;}textarea,input,select{font-family:inherit;font-size:1em;}blockquote,q{quotes:none;}q:before,q:after,blockquote:before,blockquote:after{content:'';content:none;}ol,ul{list-style:none;}ins{text-decoration:none;}del{text-decoration:line-through;}table{border-collapse:collapse;border-spacing:0;}caption,th,td{text-align:left;}:focus{outline:none;}
+
+		html, body {
+			height:100%;
+		}
+
+		body {
+			font: .8125em/1.5 Tahoma, Verdana, Geneva, Arial, Helvetica, sans-serif;
+			background: #fff;
+			color: #333;
+		}
+
+
+		header, 
+		nav, 
+		section, 
+		article, 
+		aside, 
+		footer {
+			display: block
+		}
+		a {
+			color: #267;
+			text-decoration: underline
+		}
+		a:hover {
+			color: #722
+		}
+		p {
+			margin: 0 0 1em
+			font-size: 1.35em;
+		}
+
+		h1 {
+				font-size: 2.3em;
+			}
+
+		h2 {
+				font-size: 2.0em;
+			}
+
+		header {
+			color: #007e99;
+			font-size: 2.5em;
+			padding: 20px 50px
+		}
+			header span {
+				color: #722
+			}
+			
+		nav {
+			font-size: 1.5em;
+			margin: 5px 0;
+			padding: 20px 50px
+		}
+			nav li {
+				display: inline;
+				margin: 0 15px
+			}
+			nav li:first-child {
+				margin-left: 0
+			}
+			* html nav ul {
+				margin-left: -15px
+			}
+			nav span,
+			nav a {
+				padding: 3px 15px 4px
+			}
+			nav span {
+				background: #722;
+				color: #fff
+			}
+			nav header {
+		  		margin-left: 0;
+				font-size: 12px;
+		 		padding: 0
+			}
+		section {
+			float: left;
+			padding: 35px 0;
+			position: relative;
+			width: 63%
+		}
+		
+			section article {
+				margin: 0 50px 40px;
+				padding: 25px 0 0;
+				position: relative
+			}
+			section header {
+				font-size: 1em;
+				padding: 0;
+			}
+			section h1 {
+				font-size: 2.3em;
+			}
+
+			section h2 {
+				font-size: 1.5em;
+			}
+			section p {
+				font-size: 1.35em;
+			}
+
+		aside {
+			float: right;
+			padding: 70px 0 30px;
+			position: relative;
+			width: 30%
+		}
+	
+			aside h1 {
+				color: #888;
+				font-size: 1.8em
+			}
+
+			aside .id1 {
+				padding: 15px 35px 10px 0;
+				text-align: center
+			}
+
+			aside .tag-cloud {
+				padding: 15px 35px 10px 0;
+				text-align: center
+			}
+				aside .tag-cloud li {
+					display: inline
+				}
+				aside .tag-cloud a {
+					color: #69a
+				}
+				aside .tag-cloud a:hover {
+					color: #a67
+				}
+				aside .tag-cloud .w1 {
+					font-size: .8em
+				}
+				aside .tag-cloud .w2 {
+					font-size: 1em
+				}
+				aside .tag-cloud .w3 {
+					font-size: 1.1em
+				}
+				aside .tag-cloud .w4 {
+					font-size: 1.2em
+				}
+				aside .tag-cloud .w5 {
+					font-size: 1.3em
+				}
+				aside .tag-cloud .w6 {
+					font-size: 1.4em
+				}
+				aside .tag-cloud .w7 {
+					font-size: 1.5em
+				}
+				aside .tag-cloud .w8 {
+					font-size: 1.6em
+				}
+				aside .tag-cloud .w9 {
+					font-size: 1.8em
+				}
+				aside .tag-cloud .w10 {
+					font-size: 2em
+				}
+            figcaption {
+                font-style:italic;
+                font-size: 0.8em;
+                width: 100%
+            }
+
+			footer {
+				clear: both;
+				color: #777;
+				padding: 10px 50px
+			}
+
+			header:hover, 
+			nav:hover, 
+			section:hover, 
+			aside:hover, 
+			footer:hover {
+				background: #eee
+			}
+			article:hover {
+				background: #ccc
+			}
+			article header:hover {
+				background: #ccc
+			}

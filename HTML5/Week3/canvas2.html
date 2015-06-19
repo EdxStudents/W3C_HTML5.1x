@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		#myCavas {
+			border: 1px solid black;
+		}
+	</style>
+
+<script>
+
+	var canvas, ctx;
+
+	function init() {
+		canvas = document.getElementById('myCanvas');
+		ctx = canvas.getContext('2d');
+		drawSomething();
+	}
+	function drawSomething() {
+		ctx.fillStyle='#00ff00';
+		ctx.fillRect(0,0,80,100);
+	}
+</script>
+</head>
+<body onload="init();">
+	<canvas id="myCanvas" width="200" height="200">
+    Fallback content that will be displayed in case the.
+	</canvas>
+</body>
+</html>

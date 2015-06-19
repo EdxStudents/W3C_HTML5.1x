@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		#myCanvas {
+			border: 1px solid black;
+		}
+	</style>
+
+<script>
+
+	// Create canvas
+	var canvas, ctx;
+
+	function init() {
+		canvas = document.getElementById('myCanvas');
+		ctx = canvas.getContext('2d');
+		drawSomething();
+	}
+
+
+	function drawSomething() {
+		// set the global context value
+		ctx.fillStyle = 'lightgreen';
+		// Draw the two filled red rectangles
+		ctx.fillRect(0, 0, 100, 200);
+		ctx.fillRect(150, 0, 100, 200);
+		ctx.fillRect(300, 0, 100, 200); 
+	
+		// Draw frame
+		//ctx.strokeRect(0, 0, 400, 400);
+	}
+</script>
+</head>
+<body onload="init();">
+	<canvas id="myCanvas" width="400" height="400">
+    Fallback content that will be displayed in case the.
+	</canvas>
+
+</body>
+</html>

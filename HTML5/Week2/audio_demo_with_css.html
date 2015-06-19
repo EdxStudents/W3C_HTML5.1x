@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<figure id="figaudio1">
+  <img id="imghorse" width="200"
+  	src="http://upload.wikimedia.org/wikipedia/commons/d/d4/Nokota_Horses.jpg" alt="a horse"/>
+  <figcation id="figcptionaudio1">Press Play to hear the horse!
+		<audio controls="controls">  <!-- autoplay loop -->
+			<source src="https://dl.dropboxusercontent.com/u/1631516/horse.ogg" type="audio/ogg" />
+			<source src="https://dl.dropboxusercontent.com/u/1631516/horse.mp3" type="audio/mp3" />
+			 Your browser does not support the audio element. <br />
+			 Download the audio/video in
+			 <a href="https://dl.dropboxusercontent.com/u/1631516/horse.ogg">OGG</a>
+			 <a href="https://dl.dropboxusercontent.com/u/1631516/horse.mp3">MP3</a> format.
+		</audio>
+	</figcation>
+</figure>
+
+<style>
+
+	#figaudio1 {
+		width : 420px;
+		text-align: center;
+		padding: 6px;
+		background: white;
+		margin: 0 11px 0px 0;
+		border: solid 1px #888888;
+		border-radius: 8px;
+	}
+
+	#figcptionaudio1 {
+		font-size: .8em;
+		padding: 6px 8px;
+		background: #dddddd;
+		display: block;
+		text-align: center;
+		font-family: georgia, serif;
+		font-style: italic;
+		border-radius: 7px;
+	}
+
+	#figaudio1 > img {
+		background: #eeeeee;
+		padding: 5px;
+		border: solid 1px #444444;
+	}
+
+	/* For audio and im transitions/animation */
+	audio, #figaudio1 > img {
+		transition: all 0.5s;
+	}
+
+	#figaudio1 > img: hover {
+		box-shadow: 15px 15px 20px rgba(0,0,0,0.4);
+		transform: scale(1.05);
+	}
+
+	audio:hover, audio:focus, audio:active {
+		box-shdow: 15px 15px 20px rgba(0,0,0,0.4);
+		transform: scale(1.05);
+	}
+
+</style>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script>
+   var canvas, context;
+   window.onload = function() {
+      canvas = document.getElementById("myCanvas");
+      context = canvas.getContext('2d');
+ 
+      draw();
+   };
+   function draw() {
+      var imageObj = document.querySelector("#logo");
+         console.log("image is already loaded, we draw it!");
+         context.drawImage(imageObj, 0, 10, 100, 100);
+      }
+}
+</script>
+</head>
+<body>
+	<canvas id="myCanvas" width="512" height="512">
+	</canvas>
+<img id="logo" src="http://www.w3.org/html/logo/downloads/HTML5_Logo_512.png">
+</body>
+</html>

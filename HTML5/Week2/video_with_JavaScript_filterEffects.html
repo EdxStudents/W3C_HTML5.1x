@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Sequential Movies</title>
+
+<style>
+
+	video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -180px 0 0 -240px;
+	}
+	  
+	#output {
+	  width: 307px;
+	  height: 250px;
+	  background: rgba(255,255,255,0.5);
+	  border: 1px solid #ccc;
+	}
+	#screenshot-stream {
+	  width: initial;
+	  height: initial;
+	}
+	#screenshot {
+	  vertical-align: top;
+	}
+
+	.blur {
+	  -webkit-filter: blur(3px);
+	  -moz-filter: blur(3px);
+	  -o-filter: blur(3px);
+	  -ms-filter: blur(3px);
+	  filter: blur(3px);
+	}
+	.brightness {
+	  -webkit-filter: brightness(5);
+	  -moz-filter: brightness(5);
+	  -o-filter: brightness(5);
+	  -ms-filter: brightness(5);
+	  filter: brightness(5);
+	}
+	.contrast {
+	  -webkit-filter: contrast(8);
+	  -moz-filter: contrast(8);
+	  -o-filter: contrast(8);
+	  -ms-filter: contrast(8);
+	  filter: contrast(8);
+	}
+	.hue-rotate {
+	  -webkit-filter: hue-rotate(90deg);
+	  -moz-filter: hue-rotate(90deg);
+	  -o-filter: hue-rotate(90deg);
+	  -ms-filter: hue-rotate(90deg);
+	  filter: hue-rotate(90deg);
+	}
+	.hue-rotate2 {
+	  -webkit-filter: hue-rotate(180deg);
+	  -moz-filter: hue-rotate(180deg);
+	  -o-filter: hue-rotate(180deg);
+	  -ms-filter: hue-rotate(180deg);
+	  filter: hue-rotate(180deg);
+	}
+	.hue-rotate3 {
+	  -webkit-filter: hue-rotate(270deg);
+	  -moz-filter: hue-rotate(270deg);
+	  -o-filter: hue-rotate(270deg);
+	  -ms-filter: hue-rotate(270deg);
+	  filter: hue-rotate(270deg);
+	}
+	.saturate {
+	  -webkit-filter: saturate(10);
+	  -moz-filter: saturate(10);
+	  -o-filter: saturate(10);
+	  -ms-filter: saturate(10);
+	  filter: saturate(10);
+	}
+	.grayscale {
+	  -webkit-filter: grayscale(1);
+	  -moz-filter: grayscale(1);
+	  -o-filter: grayscale(1);
+	  -ms-filter: grayscale(1);
+	  filter: grayscale(1);
+	}
+	.sepia {
+	  -webkit-filter: sepia(1);
+	  -moz-filter: sepia(1);
+	  -o-filter: sepia(1);
+	  -ms-filter: sepia(1);
+	  filter: sepia(1);
+	}
+	.invert {
+	  -webkit-filter: invert(1);
+	  -moz-filter: invert(1)
+	  -o-filter: invert(1)
+	  -ms-filter: invert(1)
+	  filter: invert(1)
+	}
+</style>
+
+
+</head>
+<body onload="init()">
+    <video id="myVideo" controls>
+    <source src="http://media.w3.org/2010/05/bunny/movie.mp4" type="video/mp4">
+    </video>
+		
+
+<script>
+<!-- filtering effects -->
+  var myVideo = document.getElementById('myVideo');
+
+  var idx = 0;
+  var filters = [
+    'grayscale',
+    'sepia',
+    'blur',
+    'brightness',
+    'contrast',
+    'hue-rotate', 'hue-rotate2', 'hue-rotate3',
+    'saturate',
+    'invert',
+    ''
+  ];
+  
+  function changeFilter(e) {
+    var el = e.target;
+    el.className = '';
+    var effect = filters[idx++ % filters.length];
+    if (effect) {
+      el.classList.add(effect);
+    }
+  }
+  
+  myVideo.addEventListener('click', changeFilter, false);
+
+</script>
+
+</body>
+</html>
