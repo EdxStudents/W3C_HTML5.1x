@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Canvas Colors</title>
+
+<style type="text/css">
+	#myCanvas {
+		border: 1px solid black;
+	}
+</style>
+
+<script type="text/javascript">
+	var canvas, ctx;
+
+	function init() {
+
+		canvas = document.getElementById('myCanvas');
+		ctx = canvas.getContext('2d');
+
+		grdUSAFlag = ctx.createLinearGradient(0, 0, 0, 200)
+
+		grdUSAFlag.addColorStop(0, "red");
+		grdUSAFlag.addColorStop(0.5, "white");
+		grdUSAFlag.addColorStop(1, "blue");
+
+		drawCheckerboard(20);
+
+		//drawSomething();
+	}
+
+	// function drawSomething() {
+	// 	ctx.fillStyle = grdUSAFlag;
+	// 	ctx.fillRect(0, 0, 300, 200);
+	// }
+
+	function drawCheckerboard(n) {
+		ctx.fillStyle = grdUSAFlag;
+
+		var l = canvas.width;
+		var h = canvas.height;
+
+		var cellWidth = l /n;
+		var cellHeight = h / n;
+
+		for(i = 0; i < n; i += 2) {
+			for(j = 0; j < n; j++) {
+				ctx.fillRect(cellWidth*(i+j%2), cellHeight*j, cellWidth, cellHeight);
+			}
+		}
+	}
+
+</script>
+
+</head>
+<body onload="init();">
+	<canvas id="myCanvas" width="300" height="200"></canvas>
+</body>
+</html>

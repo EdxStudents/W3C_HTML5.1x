@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Canvas Colors</title>
+
+<style type="text/css">
+	#myCanvas {
+		border: 1px solid black;
+	}
+</style>
+
+<script type="text/javascript">
+	var canvas, ctx;
+
+	function init() {
+		canvas = document.getElementById('myCanvas');
+		ctx = canvas.getContext('2d');
+
+		drawCheckerboard(5);
+	}
+
+	// Create Linear color pattern
+	function setGradient(x, y, width, height) {
+    grdFrenchFlag = ctx.createLinearGradient(x, y, width, height);
+    grdFrenchFlag.addColorStop(0, "blue");
+    grdFrenchFlag.addColorStop(0.5, "white");
+    grdFrenchFlag.addColorStop(1, "red");
+    // set the new gradient to the current fillStyle
+    ctx.fillStyle = grdFrenchFlag;
+	}
+
+	function drawCheckerboard(n) {
+
+		var l = canvas.width;
+		var h = canvas.height;
+
+		var cellWidth = l /n;
+		var cellHeight = h / n;
+
+		for(i = 0; i < n; i += 2) {
+			for(j = 0; j < n; j++) {
+
+				var x = cellWidth*(i+j%2);
+				var y = cellHeight*j;
+				setGradient(x, y, x+cellWidth, y+cellHeight);
+				ctx.fillRect(x,y, cellWidth, cellHeight);
+			}
+		}
+	}
+
+</script>
+
+</head>
+<body onload="init();">
+	<canvas id="myCanvas" width="300" height="200"></canvas>
+</body>
+</html>

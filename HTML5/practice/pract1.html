@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Practise 1</title>
+
+<style type="text/css">
+#myCanvas {
+	border: 1px solid black;
+}
+
+	nav {
+		font-size: 1.5em;
+		margin: 5px 0;
+		padding: 20px 50px
+	}
+		nav li {
+			display: inline;
+			margin: 0 15px
+		}
+		nav li:first-child {
+			margin-left: 0
+		}
+		* html nav ul {
+			margin-left: -15px
+		}
+		nav span,
+		nav a {
+			padding: 3px 15px 4px
+		}
+		nav span {
+			background: #722;
+			color: #fff
+		}
+		nav header {
+	  		margin-left: 0;
+			font-size: 12px;
+	 		padding: 0
+		}
+</style>
+
+<script type="text/javascript">
+	var canvas, ctx;
+	function init() {
+		
+
+		canvas = document.getElementById("myCanvas");
+		ctx = canvas.getContext('2d');	
+		
+		draw();
+	}
+
+	function draw() {
+		ctx.fillStyle = "blue";
+		ctx.fillRect(10, 10, 100, 100);
+
+	}
+
+</script>
+
+</head>
+<body  onload="init();">
+<header id="tiptop">
+	<h1>Header goes here!!!!</h1>
+</header>
+<nav>
+	<header><h2>Nav Menu</h2></header>
+	<ul>
+		<li><a href="#top">Top</a></li>
+		<li><a href="#middle">Middle</a></li>
+		<li><a href="#bottom">Bottom</a></li>
+	</ul>
+</nav>
+<article id="top">Top</article>
+<br/><br/><br/><br/><br/><br/>
+<article id="middle">Middle</article>
+
+<canvas id="myCanvas" width="300" height="300"></canvas>
+
+<br/><br/><br/><br/><br/><br/>
+<article id="bottom">Bottom</article>
+<br/><br/><br/><br/><br/><br/><br/>
+<a href="#tiptop">back to top!</a>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Canvas Colors</title>
+
+<style type="text/css">
+	#myCanvas {
+		border: 1px solid black;
+	}
+</style>
+
+<script type="text/javascript">
+	var canvas, ctx;
+
+	function init() {
+
+		canvas = document.getElementById('myCanvas');
+		ctx = canvas.getContext('2d');
+
+		drawSomething();
+	}
+
+	function drawSomething() {
+		ctx.fillStyle = 'rgba(0, 0, 255, 0.2)';
+
+		ctx.fillRect(150, 20, 200, 100);
+		ctx.fillRect(100, 50, 200, 100);
+
+		ctx.fillStyle = "blue";
+		ctx.fillRect(50, 100, 200, 100);
+	}
+</script>
+
+</head>
+<body onload="init();">
+	<canvas id="myCanvas" width="400" height="220"></canvas>
+</body>
+</html>

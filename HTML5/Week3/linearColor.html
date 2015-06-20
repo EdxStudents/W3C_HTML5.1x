@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Canvas Colors</title>
+
+<style type="text/css">
+	#myCanvas {
+		border: 1px solid black;
+	}
+</style>
+
+<script type="text/javascript">
+	var canvas, ctx;
+
+	function init() {
+
+		canvas = document.getElementById('myCanvas');
+		ctx = canvas.getContext('2d');
+
+		grdUSAFlag = ctx.createLinearGradient(0, 0, 300, 200)
+
+		grdUSAFlag.addColorStop(0, "red");
+		grdUSAFlag.addColorStop(0.5, "white");
+		grdUSAFlag.addColorStop(1, "blue");
+
+		drawSomething();
+	}
+
+	function drawSomething() {
+		ctx.fillStyle = grdUSAFlag;
+		ctx.fillRect(0, 0, 300, 200);
+	}
+</script>
+
+</head>
+<body onload="init();">
+	<canvas id="myCanvas" width="300" height="200"></canvas>
+</body>
+</html>

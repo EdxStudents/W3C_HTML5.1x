@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+	var canvas, ctx, w, h;
+	function init() {
+	    canvas = document.getElementById('myCanvas');
+	    ctx = canvas.getContext('2d');
+	    w = canvas.width;
+	    h = canvas.height;
+	    console.time("time to draw");
+  		
+  		for(var j = 0; j < 500; j++) {
+  			var s = Math.random() * w;
+  			var t = Math.random() * h;
+  			var wth = Math.random() * w % 50;
+  			var hght = Math.random() * h % 50;
+  			ctx.fillStyle = "red";
+  			ctx.rect(s, t, wth, hght);
+  		}
+  		ctx.fill();
+  		ctx.beginPath();
+
+
+		for(var j1 = 0; j1 < 500; j1++) {
+  			var s1 = Math.random() * w;
+  			var t1 = Math.random() * h;
+  			var wth1 = Math.random() * w % 50;
+  			var hght1 = Math.random() * h % 50;
+  			ctx.fillStyle = "black";
+
+  			ctx.rect(s1, t1, wth1, hght1);
+  		}
+  		ctx.fill();
+
+      	for(var i=0; i < 200; i++) {
+		    var x = Math.random() * w;
+		    var y = Math.random() * h;
+		    var width = Math.random() * w;
+		    var height = Math.random() * h;
+		    ctx.strokeStyle = "lightGreen";
+		    ctx.rect(x, y, width, height); 
+		  }
+  		
+  		ctx.stroke();
+	    console.timeEnd("time to draw");
+	}
+</script>
+</head>
+<body onload="init();">
+<canvas id="myCanvas" width="500" height="500"></canvas>
+</body>
+</html>
